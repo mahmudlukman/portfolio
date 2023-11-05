@@ -17,8 +17,8 @@ function MyApp({ Component, pageProps }) {
       <AnimatePresence mode="wait">
         <motion.div key={router.route} className="h-full">
           <Transition />
+          <Component {...pageProps} />
         </motion.div>
-        <Component {...pageProps} />
       </AnimatePresence>
     </Layout>
   );
