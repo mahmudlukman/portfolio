@@ -1,6 +1,6 @@
 // import swiper react components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination } from 'swiper';
+import { Pagination } from 'swiper';
 
 // import swiper styles
 import 'swiper/css';

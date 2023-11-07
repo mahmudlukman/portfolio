@@ -7,14 +7,15 @@ import {
   FaJs,
   FaReact,
   FaWordpress,
-  FaFigma,
 } from 'react-icons/fa';
+
+import {BiLogoMongodb, BiLogoNodejs, BiLogoTailwindCss, BiLogoTypescript} from 'react-icons/bi'
 
 import {
   SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
+  SiMui,
+  SiExpress,
+  SiMongoose
 } from 'react-icons/si';
 
 //  data
@@ -23,20 +24,25 @@ const aboutData = [
     title: 'skills',
     info: [
       {
-        title: 'Web Development',
+        title: 'Front End',
         icons: [
           <FaHtml5 />,
           <FaCss3 />,
           <FaJs />,
+          <BiLogoTypescript />,
           <FaReact />,
           <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          <BiLogoTailwindCss />,
+          <SiMui />,
         ],
       },
       {
-        title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        title: 'Backed End',
+        icons: [<BiLogoNodejs/>, <BiLogoMongodb/>, <SiExpress />, <SiMongoose />],
+      },
+      {
+        title: 'CMS',
+        icons: [<FaWordpress />,],
       },
     ],
   },
