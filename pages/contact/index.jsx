@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 // components
 import Circles from '../../components/Circles';
 
@@ -9,8 +10,70 @@ import { motion } from 'framer-motion';
 
 // variants
 import { fadeIn } from '../../variants';
+import { useState, useRef } from 'react';
+
 
 const Contact = () => {
+  const formRef = useRef();
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    
+    setLoading(true)
+
+    emailjs.send(
+      'service_zsvgel9',
+      'template_5ln6pd8',
+      {
+        from_name: form.name,
+        to_name: 'Lukman',
+        from_email: form.email,
+        to_email: 'mistamann@gmail.com',
+        message: form.message,
+      },
+      'QbMm87KHMI1ONcTjg'
+    )
+    .then(() => {
+      setLoading(false)
+      setSuccess(true)
+      // alert('Thank you. I will get back to you as soon as possible.')
+      setForm({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      })
+    }, (error) => {
+      setLoading(false)
+      setError(true)
+      console.log(error)
+
+      // alert('Something went wrong!')
+    })
+  };
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     console.log('This will run after 1 second!')
+  //   }, 3000);
+  //   return () => clearTimeout(timer);
+  // }, [error, success]);
+
   return (
     <div className="h-full bg-primary/30">
       <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
@@ -28,6 +91,8 @@ const Contact = () => {
           </motion.h2>
           {/* form */}
           <motion.form
+            ref={formRef}
+            onSubmit={handleSubmit}
             variants={fadeIn('up', 0.4)}
             initial="hidden"
             animate="show"
@@ -36,17 +101,46 @@ const Contact = () => {
           >
             {/* input group */}
             <div className="flex gap-x-6 w-full">
-              <input type="text" placeholder="name" className="input" />
-              <input type="email" placeholder="email" className="input" />
+              <input
+                type="text"
+                name='name'
+                value={form.name}
+                onChange={handleChange}
+                placeholder="name"
+                className="input"
+              />
+              <input
+                type="email"
+                name='email'
+                value={form.email}
+                onChange={handleChange}
+                placeholder="email"
+                className="input"
+              />
             </div>
-            <input type="text" placeholder="subject" className="input" />
-            <textarea placeholder="message" className="textarea"></textarea>
+            <input
+              type="text"
+              name='subject'
+              value={form.subject}
+              onChange={handleChange}
+              placeholder="subject"
+              className="input"
+            />
+            <textarea
+              placeholder="message"
+              name='message'
+              value={form.message}
+              onChange={handleChange}
+              className="textarea"
+            ></textarea>
             <button className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group">
               <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
-                Let&apos;s talk
+                {loading ? 'Sending...' : 'Send'}
               </span>
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
+            {error && 'Something went wrong!'}
+            {success && 'Thank you. I will get back to you as soon as possible.'}
           </motion.form>
         </div>
       </div>
