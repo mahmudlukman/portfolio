@@ -12,9 +12,8 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import { useState, useRef } from 'react';
 
-
 const Contact = () => {
-  const formRef = useRef();
+  const formRef = useRef(null);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -24,55 +23,51 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const { alert, showAlert, hideAlert } = useAlert();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setForm({ ...form, [name]: value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
 
-    emailjs.send(
-      'service_zsvgel9',
-      'template_5ln6pd8',
-      {
-        from_name: form.name,
-        to_name: 'Lukman',
-        from_email: form.email,
-        to_email: 'mistamann@gmail.com',
-        message: form.message,
-      },
-      'QbMm87KHMI1ONcTjg'
-    )
-    .then(() => {
-      setLoading(false)
-      setSuccess(true)
-      // alert('Thank you. I will get back to you as soon as possible.')
-      setForm({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      })
-    }, (error) => {
-      setLoading(false)
-      setError(true)
-      console.log(error)
-
-      // alert('Something went wrong!')
-    })
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: 'Lukman',
+          from_email: form.email,
+          to_email: 'mistamann49@gmail.com',
+          message: form.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_API_KEY
+      )
+      .then(
+        () => {
+          setLoading(false);
+          showAlert({show: true, text: 'Thank you. I will get back to you as soon as possible.', type: 'success'})
+          setSuccess(true);
+          setForm({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+          });
+          setTimeout(() => {
+            setSuccess(false);
+          },[3000])
+        },
+        (error) => {
+          setLoading(false);
+          setError(true)
+          console.log(error);
+        }
+      );
   };
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     console.log('This will run after 1 second!')
-  //   }, 3000);
-  //   return () => clearTimeout(timer);
-  // }, [error, success]);
 
   return (
     <div className="h-full bg-primary/30">
@@ -103,16 +98,20 @@ const Contact = () => {
             <div className="flex gap-x-6 w-full">
               <input
                 type="text"
-                name='name'
+                name="name"
+                id="name"
                 value={form.name}
+                required
                 onChange={handleChange}
                 placeholder="name"
                 className="input"
               />
               <input
                 type="email"
-                name='email'
+                name="email"
+                id="email"
                 value={form.email}
+                required
                 onChange={handleChange}
                 placeholder="email"
                 className="input"
@@ -120,27 +119,36 @@ const Contact = () => {
             </div>
             <input
               type="text"
-              name='subject'
+              name="subject"
+              id="subject"
               value={form.subject}
+              required
               onChange={handleChange}
               placeholder="subject"
               className="input"
             />
             <textarea
               placeholder="message"
-              name='message'
+              name="message"
+              id="message"
               value={form.message}
+              required
               onChange={handleChange}
               className="textarea"
             ></textarea>
-            <button className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group">
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group"
+            >
               <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
                 {loading ? 'Sending...' : 'Send'}
               </span>
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
             {error && 'Something went wrong!'}
-            {success && 'Thank you. I will get back to you as soon as possible.'}
+            {success &&
+              'Thank you. I will get back to you as soon as possible.'}
           </motion.form>
         </div>
       </div>
