@@ -15,13 +15,6 @@ const Header = () => {
           {/* logo */}
           <Link href={'/'}>
           <h3 className='h3 xl:mt-10'>Mahmud <span className='text-accent'>Lukman.</span></h3>
-            {/* <Image
-              src={'/logo.svg'}
-              alt="logo"
-              width={220}
-              height={48}
-              priority={true}
-            /> */}
           </Link>
           {/* socials */}
           <Socials />

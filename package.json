@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@netlify/plugin-nextjs": "^4.41.1",
     "@next/font": "^13.4.4",
     "formik": "^2.4.5",
     "framer-motion": "^10.12.16",

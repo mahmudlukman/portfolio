@@ -1,7 +1,3 @@
-import emailjs from '@emailjs/browser';
-// components
-import Circles from '../../components/Circles';
-
 // icons
 import { BsArrowRight } from 'react-icons/bs';
 
@@ -10,7 +6,7 @@ import { motion } from 'framer-motion';
 
 // variants
 import { fadeIn } from '../../variants';
-import { useState, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
