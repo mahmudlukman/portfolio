@@ -21,28 +21,28 @@ import {
 const serviceData = [
   {
     icon: <RxCrop />,
-    title: 'Branding',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Custom Web App Development',
+    description: 'Crafting innovative and user-centric web applications.',
   },
   {
     icon: <RxPencil2 />,
-    title: 'Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Training and Mentorship',
+    description: 'Offering coaching and training sessions for aspiring programmers.',
   },
   {
     icon: <RxDesktop />,
-    title: 'Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    icon: <RxReader />,
-    title: 'Copywriting',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Consultancy',
+    description: 'Providing insights and consultations to startups and businesses on tech strategies.',
   },
   {
     icon: <RxRocket />,
-    title: 'SEO',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Startup Launch',
+    description: 'Assisting startups from ideation, MVP creation, and technology implementation.',
+  },
+  {
+    icon: <RxReader />,
+    title: 'Project Management and Collaboration',
+    description: 'Collaborating with teams or organizations in project management.',
   },
 ];
 

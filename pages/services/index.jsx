@@ -15,15 +15,15 @@ const Services = () => {
         <div className="flex flex-col xl:flex-row gap-x-8">
           {/* text */}
           <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0">
-            <motion.h2
+            <motion.h3
               variants={fadeIn('up', 0.2)}
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="h2 xl:mt-8"
+              className="h3 xl:mt-8"
             >
-              My Services<span className="text-accent">.</span>
-            </motion.h2>
+              My <span className="text-accent">Services.</span>
+            </motion.h3>
             <motion.p
               variants={fadeIn('up', 0.4)}
               initial="hidden"
@@ -31,9 +31,7 @@ const Services = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Assumenda nostrum commodi culpa necessitatibus tempore placeat aut
-              quibusdam ullam temporibus voluptatibus.
+             My services cut across a wide array of expertise, from technical development to teaching and entrepreneurial guidance.
             </motion.p>
           </div>
           <motion.div 

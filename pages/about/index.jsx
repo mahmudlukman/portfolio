@@ -51,12 +51,12 @@ const aboutData = [
     title: 'awards',
     info: [
       {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
+        title: 'IBM V2 Mastery - Honoree',
+        stage: '2018 - 2019',
       },
       {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
+        title: 'NPower Training Best Trainer - Honoree',
+        stage: '2019',
       },
     ],
   },
@@ -64,16 +64,24 @@ const aboutData = [
     title: 'experience',
     info: [
       {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
+        title: 'Software Engineer - Codepence',
+        stage: '2023 - present',
       },
       {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
+        title: 'DGM IT - Future Renewables',
+        stage: '2022 - 2023',
       },
       {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
+        title: 'Web developer - CitizenHelpline',
+        stage: '2020 - 2022',
+      },
+      {
+        title: 'Tutor - Pure Access IT',
+        stage: '2019 - 2020',
+      },
+      {
+        title: 'Tutor/Engineer - McAnderson Associates',
+        stage: '2018 - 2019',
       },
     ],
   },
@@ -81,16 +89,24 @@ const aboutData = [
     title: 'credentials',
     info: [
       {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
+        title: 'IBM Certified Data Engineer - IBM Skills Academy',
+        stage: '2019',
       },
       {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
+        title: 'Cyber Diplomacy - UN office of disarmament affairs',
+        stage: '2020',
       },
       {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
+        title: 'Start up - Aalto University',
+        stage: '2020',
+      },
+      {
+        title: 'Web design for Everybody - University of Michigan',
+        stage: '2020',
+      },
+      {
+        title: 'Google IT Support - Google',
+        stage: '2020',
       },
     ],
   },
@@ -113,7 +129,7 @@ const About = () => {
     <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
       <Circles />
       {/* avatar img */}
-      <motion.div
+      {/* <motion.div
         variants={fadeIn('right', 0.2)}
         initial="hidden"
         animate="show"
@@ -121,20 +137,19 @@ const About = () => {
         className="hidden xl:flex absolute bottom-0 top-20 -left-[370px]"
       >
         <Avatar />
-      </motion.div>
+      </motion.div> */}
       <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
         {/* text */}
         <div className="flex-1 flex flex-col justify-center">
-          <motion.h2
-            className="h2"
+          <motion.h3
+            className="h3"
             variants={fadeIn('right', 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
-          </motion.h2>
+            My <span className="text-accent">story.</span>
+          </motion.h3>
           <motion.p
             variants={fadeIn('right', 0.4)}
             initial="hidden"
@@ -142,9 +157,7 @@ const About = () => {
             exit="hidden"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 z-10"
           >
-            10 years ago, I began freelancing as a developer. Since then,
-            I&apos;ve done remote work for agencies, consulted for startups, and
-            collaborated on digital products for business and consumer use.{' '}
+            A software engineer with a robust background specializing in the development of dynamic web applications. Beyond technical prowess, I wear the hat of a seasoned programming tutor. I&apos;ve ventured into the entrepreneurial realm, leveraging my expertise to spearhead and materialize innovative solutions, positioning myself at the intersection of technology, education, and entrepreneurship.
           </motion.p>
           {/* counters */}
           <motion.div
@@ -167,7 +180,7 @@ const About = () => {
               {/* clients */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={250} duration={5} /> +
+                  <CountUp start={0} end={30} duration={5} /> +
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                   Satisfied Clients
@@ -176,18 +189,10 @@ const About = () => {
               {/* projects */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} /> +
+                  <CountUp start={0} end={50} duration={5} /> +
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                   Completed Projects
-                </div>
-              </div>
-              <div className="relative flex-1">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={6} duration={5} /> +
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning Awards
                 </div>
               </div>
             </div>

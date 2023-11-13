@@ -16,43 +16,47 @@ const workSlides = {
     {
       images: [
         {
-          title: 'title',
-          path: '/thumb1.jpg',
+          title: 'Crypto Edge',
+          path: '/crypto.png',
+          link: 'https://github.com/mahmudlukman/crypto_edge',
         },
         {
-          title: 'title',
-          path: '/thumb2.jpg',
+          title: 'Filmflix',
+          path: '/filmflix.png',
+          link: 'https://moviesflixx.netlify.app/',
         },
         {
-          title: 'title',
-          path: '/thumb3.jpg',
+          title: 'Cherish School of Nursing',
+          path: '/cherishedu.png',
+          link: 'https://cherishedu.net/',
         },
         {
-          title: 'title',
-          path: '/thumb4.jpg',
+          title: 'Arewa Foundation',
+          path: '/arewafoundation.png',
+          link: 'https://arewafoundation.org/',
         },
       ],
     },
-    {
-      images: [
-        {
-          title: 'title',
-          path: '/thumb4.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb1.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb2.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb3.jpg',
-        },
-      ],
-    },
+    // {
+    //   images: [
+    //     {
+    //       title: 'title',
+    //       path: '/thumb4.jpg',
+    //     },
+    //     {
+    //       title: 'title',
+    //       path: '/thumb1.jpg',
+    //     },
+    //     {
+    //       title: 'title',
+    //       path: '/thumb2.jpg',
+    //     },
+    //     {
+    //       title: 'title',
+    //       path: '/thumb3.jpg',
+    //     },
+    //   ],
+    // },
   ],
 };
 
