@@ -31,7 +31,7 @@ const Work = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              As a software engineer, I have demonstrated exceptional proficiency in conceiving, designing, and building remarkable applications that leverage cutting-edge technologies to offer innovative and user-centric solutions.
+              As a software engineer with proficiency in conceiving, designing, and building remarkable applications that leverage cutting-edge technologies to offer innovative and user-centric solutions.
             </motion.p>
           </div>
           <motion.div 

@@ -157,7 +157,7 @@ const About = () => {
             exit="hidden"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 z-10"
           >
-            A software engineer with a robust background specializing in the development of dynamic web applications. Beyond technical prowess, I wear the hat of a seasoned programming tutor. I&apos;ve ventured into the entrepreneurial realm, leveraging my expertise to spearhead and materialize innovative solutions, positioning myself at the intersection of technology, education, and entrepreneurship.
+            I&apos;ve thrived in crafting applications that resonate with users, ensuring a symphony of user experience and interface design that fosters not just usage, but a relationship between the application and its user.
           </motion.p>
           {/* counters */}
           <motion.div
