@@ -14,7 +14,7 @@ const Header = () => {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-y-6 py-8">
           {/* logo */}
           <Link href={'/'}>
-          <h3 className='h3 xl:mt-10'>Mahmud <span className='text-accent'>Lukman.</span></h3>
+          <h3 className='h3'>Mah<span className='text-accent'>mud.</span></h3>
           </Link>
           {/* socials */}
           <Socials />
