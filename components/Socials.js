@@ -2,8 +2,9 @@
 import Link from "next/link";
 
 // icons
-import {RiGithubLine, RiInstagramLine, RiFacebookLine, RiTwitterLine} from 'react-icons/ri'
-import {AiFillLinkedin} from 'react-icons/ai'
+import {RiGithubLine} from 'react-icons/ri'
+import {AiOutlineLinkedin} from 'react-icons/ai'
+import {FaXTwitter} from 'react-icons/fa6'
 
 const Socials = () => {
   return (
@@ -12,13 +13,10 @@ const Socials = () => {
         <RiGithubLine />
       </Link>
       <Link href='https://www.linkedin.com/in/mahmudlukman/' className="hover:text-accent transition-all duration-300">
-        <AiFillLinkedin />
+        <AiOutlineLinkedin />
       </Link>
-      {/* <Link href='#' className="hover:text-accent transition-all duration-300">
-        <RiFacebookLine />
-      </Link> */}
-      <Link href='https://twitter/mahmudlukman_' className="hover:text-accent transition-all duration-300">
-        <RiTwitterLine />
+      <Link href='https://x.com/mahmudlukman_' className="hover:text-accent transition-all duration-300">
+        <FaXTwitter />
       </Link>
     </div>
   );
