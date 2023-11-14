@@ -16,7 +16,9 @@ import {
   SiNextdotjs,
   SiMui,
   SiExpress,
-  SiMongoose
+  SiMongoose,
+  SiSolidity,
+  SiFirebase
 } from 'react-icons/si';
 
 //  data
@@ -33,13 +35,12 @@ const aboutData = [
           <BiLogoTypescript />,
           <FaReact />,
           <SiNextdotjs />,
-          <BiLogoTailwindCss />,
-          <SiMui />,
+          <SiSolidity />,
         ],
       },
       {
         title: 'Backed End',
-        icons: [<BiLogoNodejs/>, <BiLogoMongodb/>, <SiExpress />, <SiMongoose />],
+        icons: [<BiLogoNodejs/>, <BiLogoMongodb/>, <SiExpress />, <SiMongoose />, <SiFirebase/>],
       },
       {
         title: 'CMS',
